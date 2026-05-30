@@ -6,7 +6,8 @@
 #include <QSlider>
 #include <QPushButton>
 #include <QTimer>
-#include "VisualWidget.h"
+#include "GanttWidget.h"
+#include "GraphWidget.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -21,7 +22,8 @@ private slots:
 
 private:
     QTextEdit *textInput;
-    VisualWidget *visualizer;
+    GanttWidget *ganttWidget;
+    GraphWidget *graphWidget;
     QSlider *slider;
     QPushButton *playBtn;
     QTimer *timer;

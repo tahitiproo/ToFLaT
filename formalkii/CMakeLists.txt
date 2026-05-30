@@ -14,11 +14,13 @@ find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 
 add_executable(ka_graph
-    ka_graph.cpp
-    mainwindow.h
-    mainwindow.cpp
-    visualwidget.h
-    visualwidget.cpp
+    main.cpp
+    MainWindow.h
+    MainWindow.cpp
+    GanttWidget.h
+    GanttWidget.cpp
+    GraphWidget.h
+    GraphWidget.cpp
     types.h
 )
 

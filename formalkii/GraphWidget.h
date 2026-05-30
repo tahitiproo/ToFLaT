@@ -1,14 +1,14 @@
-#ifndef VISUALWIDGET_H
-#define VISUALWIDGET_H
+#ifndef GRAPHWIDGET_H
+#define GRAPHWIDGET_H
 
 #include <QWidget>
 #include <vector>
 #include "types.h"
 
-class VisualWidget : public QWidget {
+class GraphWidget : public QWidget {
     Q_OBJECT
 public:
-    explicit VisualWidget(QWidget *parent = nullptr);
+    explicit GraphWidget(QWidget *parent = nullptr);
     void setData(int T, int n, const std::vector<Interval>& intervals);
 
 public slots:
@@ -22,9 +22,6 @@ private:
     int numSatellites = 0;
     std::vector<Interval> intervals;
     int currentTime = 0;
-    
-    void drawGantt(QPainter& painter, const QRect& rect);
-    void drawNetwork(QPainter& painter, const QRect& rect);
 };
 
-#endif // VISUALWIDGET_H
+#endif // GRAPHWIDGET_H

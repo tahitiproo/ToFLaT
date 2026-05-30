@@ -5,10 +5,11 @@
 #include <QLabel>
 #include <QStringList>
 #include <QRegularExpression>
+#include <QScrollArea>
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     setWindowTitle("Спутники и группировки (Qt/C++)");
-    resize(1100, 750);
+    resize(1200, 800);
 
     QSplitter *splitter = new QSplitter(Qt::Horizontal, this);
     
@@ -41,12 +42,27 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     controlLayout->addWidget(slider);
     rightLayout->addLayout(controlLayout);
     
-    visualizer = new VisualWidget(rightWidget);
-    rightLayout->addWidget(visualizer, 1);
+    // Вертикальный ролл для двух визуализаторов
+    QSplitter *rightSplitter = new QSplitter(Qt::Vertical, rightWidget);
+    
+    // Добавляем QScrollArea для диаграммы Ганта, чтобы она могла расширяться при обилии пар!
+    QScrollArea *scrollArea = new QScrollArea(rightSplitter);
+    scrollArea->setWidgetResizable(true);
+    ganttWidget = new GanttWidget(scrollArea);
+    scrollArea->setWidget(ganttWidget);
+    
+    graphWidget = new GraphWidget(rightSplitter);
+    
+    rightSplitter->addWidget(scrollArea);
+    rightSplitter->addWidget(graphWidget);
+    rightSplitter->setSizes({400, 400}); // Распределяем пополам по высоте
+    
+    rightLayout->addWidget(rightSplitter, 1);
     
     splitter->addWidget(leftWidget);
     splitter->addWidget(rightWidget);
-    splitter->setSizes({300, 800});
+    splitter->setSizes({300, 900}); // Ширина панелей
+    
     setCentralWidget(splitter);
 
     // Таймер сигналы и слоты
@@ -54,7 +70,8 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     connect(timer, &QTimer::timeout, this, &MainWindow::onTick);
     connect(playBtn, &QPushButton::clicked, this, &MainWindow::togglePlay);
     connect(applyBtn, &QPushButton::clicked, this, &MainWindow::applyData);
-    connect(slider, &QSlider::valueChanged, visualizer, &VisualWidget::setCurrentTime);
+    connect(slider, &QSlider::valueChanged, ganttWidget, &GanttWidget::setCurrentTime);
+    connect(slider, &QSlider::valueChanged, graphWidget, &GraphWidget::setCurrentTime);
 
     applyData();
 }
@@ -68,6 +85,10 @@ void MainWindow::applyData() {
 
     for (const QString& line : lines) {
         QString cleanLine = line.trimmed();
+        
+        // Удаляем угловые скобки (на случай если пользователь их скопипастил в форму)
+        cleanLine.remove('<').remove('>');
+
         if (cleanLine.startsWith("T", Qt::CaseInsensitive) && cleanLine.contains("=")) {
             T = cleanLine.split("=").last().toInt();
         } else if (cleanLine.startsWith("n", Qt::CaseInsensitive) && cleanLine.contains("=")) {
@@ -92,7 +113,8 @@ void MainWindow::applyData() {
     playBtn->setText("▶ Play");
     slider->setRange(0, T);
     slider->setValue(0);
-    visualizer->setData(T, n, intervals);
+    ganttWidget->setData(T, n, intervals);
+    graphWidget->setData(T, n, intervals);
 }
 
 void MainWindow::togglePlay() {
@@ -101,7 +123,7 @@ void MainWindow::togglePlay() {
         playBtn->setText("▶ Play");
     } else {
         if (slider->value() >= slider->maximum()) slider->setValue(0);
-        timer->start(350); 
+        timer->start(350); // Вызываем тик каждые 350мс
         playBtn->setText("⏸ Pause");
     }
 }
@@ -112,6 +134,6 @@ void MainWindow::onTick() {
         timer->stop();
         playBtn->setText("▶ Play");
     } else {
-        slider->setValue(current + 2); 
+        slider->setValue(current + 2); // Можно менять шаг движения времени
     }
 }
