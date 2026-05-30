@@ -1,0 +1,5 @@
+C:/Users/user/source/repos/ToFLaT/formalkii/build/CMakeFiles/ka_graph.dir
+C:/Users/user/source/repos/ToFLaT/formalkii/build/CMakeFiles/edit_cache.dir
+C:/Users/user/source/repos/ToFLaT/formalkii/build/CMakeFiles/rebuild_cache.dir
+C:/Users/user/source/repos/ToFLaT/formalkii/build/CMakeFiles/ka_graph_autogen_timestamp_deps.dir
+C:/Users/user/source/repos/ToFLaT/formalkii/build/CMakeFiles/ka_graph_autogen.dir

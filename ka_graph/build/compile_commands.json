@@ -1,0 +1,32 @@
+[
+{
+  "directory": "C:/Users/user/source/repos/ToFLaT/formalkii/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/ka_graph.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\ka_graph.dir\\ka_graph_autogen\\mocs_compilation.cpp.obj -c C:\\Users\\user\\source\\repos\\ToFLaT\\formalkii\\build\\ka_graph_autogen\\mocs_compilation.cpp",
+  "file": "C:/Users/user/source/repos/ToFLaT/formalkii/build/ka_graph_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/ka_graph.dir/ka_graph_autogen/mocs_compilation.cpp.obj"
+},
+{
+  "directory": "C:/Users/user/source/repos/ToFLaT/formalkii/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/ka_graph.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\ka_graph.dir\\main.cpp.obj -c C:\\Users\\user\\source\\repos\\ToFLaT\\formalkii\\main.cpp",
+  "file": "C:/Users/user/source/repos/ToFLaT/formalkii/main.cpp",
+  "output": "CMakeFiles/ka_graph.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/user/source/repos/ToFLaT/formalkii/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/ka_graph.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\ka_graph.dir\\MainWindow.cpp.obj -c C:\\Users\\user\\source\\repos\\ToFLaT\\formalkii\\MainWindow.cpp",
+  "file": "C:/Users/user/source/repos/ToFLaT/formalkii/MainWindow.cpp",
+  "output": "CMakeFiles/ka_graph.dir/MainWindow.cpp.obj"
+},
+{
+  "directory": "C:/Users/user/source/repos/ToFLaT/formalkii/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/ka_graph.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\ka_graph.dir\\GanttWidget.cpp.obj -c C:\\Users\\user\\source\\repos\\ToFLaT\\formalkii\\GanttWidget.cpp",
+  "file": "C:/Users/user/source/repos/ToFLaT/formalkii/GanttWidget.cpp",
+  "output": "CMakeFiles/ka_graph.dir/GanttWidget.cpp.obj"
+},
+{
+  "directory": "C:/Users/user/source/repos/ToFLaT/formalkii/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/ka_graph.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\ka_graph.dir\\GraphWidget.cpp.obj -c C:\\Users\\user\\source\\repos\\ToFLaT\\formalkii\\GraphWidget.cpp",
+  "file": "C:/Users/user/source/repos/ToFLaT/formalkii/GraphWidget.cpp",
+  "output": "CMakeFiles/ka_graph.dir/GraphWidget.cpp.obj"
+}
+]
